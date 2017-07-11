@@ -24,7 +24,12 @@ namespace SummerCamp.Web.Controllers
 
         //Hosted web API REST Service base url  
 
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public async Task<ActionResult> AllAnnouncements()
         {
             List<Announcement> AnnouncementInfo = new List<Announcement>();
             string Baseurl = "http://api.summercamp.stage02.netromsoftware.ro";
@@ -55,6 +60,136 @@ namespace SummerCamp.Web.Controllers
             }
 
         }
+
+        public async Task<ActionResult> Auto()
+        {
+            List<Announcement> AnnouncementInfo = new List<Announcement>();
+            string Baseurl = "http://api.summercamp.stage02.netromsoftware.ro";
+            using (var client = new HttpClient())
+            {
+                //Passing service base url  
+                client.BaseAddress = new Uri(Baseurl);
+
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format  
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                //Sending request to find web api REST service resource GetAllAnnouncements using HttpClient  
+                HttpResponseMessage Res = await client.GetAsync("api/announcements");
+
+                //Checking the response is successful or not which is sent using HttpClient  
+                if (Res.IsSuccessStatusCode)
+                {
+                    //Storing the response details recieved from web api   
+                    var AnnouncementResp = Res.Content.ReadAsStringAsync().Result;
+
+                    //Deserializing the response recieved from web api and storing into the Announcement list  
+                    AnnouncementInfo = JsonConvert.DeserializeObject<List<Announcement>>(AnnouncementResp);
+
+                }
+                //returning the Announcement list to view  
+                return View(AnnouncementInfo);
+            }
+
+        }
+
+        public async Task<ActionResult> Imobiliare()
+        {
+            List<Announcement> AnnouncementInfo = new List<Announcement>();
+            string Baseurl = "http://api.summercamp.stage02.netromsoftware.ro";
+            using (var client = new HttpClient())
+            {
+                //Passing service base url  
+                client.BaseAddress = new Uri(Baseurl);
+
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format  
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                //Sending request to find web api REST service resource GetAllAnnouncements using HttpClient  
+                HttpResponseMessage Res = await client.GetAsync("api/announcements");
+
+                //Checking the response is successful or not which is sent using HttpClient  
+                if (Res.IsSuccessStatusCode)
+                {
+                    //Storing the response details recieved from web api   
+                    var AnnouncementResp = Res.Content.ReadAsStringAsync().Result;
+
+                    //Deserializing the response recieved from web api and storing into the Announcement list  
+                    AnnouncementInfo = JsonConvert.DeserializeObject<List<Announcement>>(AnnouncementResp);
+
+                }
+                //returning the Announcement list to view  
+                return View(AnnouncementInfo);
+            }
+
+        }
+
+        public async Task<ActionResult> Electronice()
+        {
+            List<Announcement> AnnouncementInfo = new List<Announcement>();
+            string Baseurl = "http://api.summercamp.stage02.netromsoftware.ro";
+            using (var client = new HttpClient())
+            {
+                //Passing service base url  
+                client.BaseAddress = new Uri(Baseurl);
+
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format  
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                //Sending request to find web api REST service resource GetAllAnnouncements using HttpClient  
+                HttpResponseMessage Res = await client.GetAsync("api/announcements");
+
+                //Checking the response is successful or not which is sent using HttpClient  
+                if (Res.IsSuccessStatusCode)
+                {
+                    //Storing the response details recieved from web api   
+                    var AnnouncementResp = Res.Content.ReadAsStringAsync().Result;
+
+                    //Deserializing the response recieved from web api and storing into the Announcement list  
+                    AnnouncementInfo = JsonConvert.DeserializeObject<List<Announcement>>(AnnouncementResp);
+
+                }
+                //returning the Announcement list to view  
+                return View(AnnouncementInfo);
+            }
+
+        }
+
+        public async Task<ActionResult> Arta()
+        {
+            List<Announcement> AnnouncementInfo = new List<Announcement>();
+            string Baseurl = "http://api.summercamp.stage02.netromsoftware.ro";
+            using (var client = new HttpClient())
+            {
+                //Passing service base url  
+                client.BaseAddress = new Uri(Baseurl);
+
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format  
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                //Sending request to find web api REST service resource GetAllAnnouncements using HttpClient  
+                HttpResponseMessage Res = await client.GetAsync("api/announcements");
+
+                //Checking the response is successful or not which is sent using HttpClient  
+                if (Res.IsSuccessStatusCode)
+                {
+                    //Storing the response details recieved from web api   
+                    var AnnouncementResp = Res.Content.ReadAsStringAsync().Result;
+
+                    //Deserializing the response recieved from web api and storing into the Announcement list  
+                    AnnouncementInfo = JsonConvert.DeserializeObject<List<Announcement>>(AnnouncementResp);
+
+                }
+                //returning the Announcement list to view  
+                return View(AnnouncementInfo);
+            }
+
+        }
+
+
 
 
         //public async Task<ActionResult> Categories()
@@ -88,7 +223,7 @@ namespace SummerCamp.Web.Controllers
         //    }
 
         //}
-        
+
 
         public ActionResult Categories()
         {

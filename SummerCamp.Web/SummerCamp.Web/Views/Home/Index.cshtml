@@ -1,146 +1,259 @@
-﻿@model IEnumerable<SummerCamp.Web.Models.Announcement>
-
-
-
+﻿<html lang="en">
 <head>
-    <style>
-        * {
-            box-sizing: border-box;
+    <style id="stndz-style">
+        div[class*="item-container-obpd"], a[data-redirect*="paid.outbrain.com"], a[onmousedown*="paid.outbrain.com"] {
+            display: none !important;
         }
 
-        #myInput {
-            background-image: url('/css/searchicon.png');
-            background-position: 10px 10px;
-            background-repeat: no-repeat;
-            width: 100%;
-            font-size: 16px;
-            padding: 12px 20px 12px 40px;
-            border: 1px solid #ddd;
-            margin-bottom: 12px;
+        a div[class*="item-container-ad"] {
+            height: 0px !important;
+            overflow: hidden !important;
+            position: absolute !important;
         }
 
-        #myTable {
-            border-collapse: collapse;
-            width: 100%;
-            border: 1px solid #ddd;
-            font-size: 18px;
+        div[data-item-syndicated="true"] {
+            display: none !important;
         }
 
-            #myTable th, #myTable td {
-                text-align: left;
-                padding: 12px;
-            }
-
-            #myTable tr {
-                border-bottom: 1px solid #ddd;
-            }
-
-                #myTable tr.header, #myTable tr:hover {
-                    background-color: #f1f1f1;
-                }
-
-        body {
-            background-image: url("https://www.clipartsgram.com/image/1284342478-56573976094735chapwood-website-background-1.jpg");
+        .grv_is_sponsored {
+            display: none !important;
         }
 
+        .zergnet-widget-related {
+            display: none !important;
+        }
     </style>
 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Shop Homepage </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
-<style type="text/css">
-    table {
-        page-break-inside: auto;
-    }
 
-    tr {
-        page-break-inside: avoid;
-        page-break-after: auto;
-    }
-</style>
 <body>
-    <div id="ScrnWdthCntnr0-s3ninlineContent" class="sc3inlineContent" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1"><nav id="DrpDwnMn0" data-menuborder-y="0" data-menubtn-border="0" data-ribbon-els="0" data-label-pad="0" data-ribbon-extra="0" data-drophposition="" data-dropalign="right" dir="ltr" style="left: 85px; width: 884px; position: absolute; top: 27px; height: 30px;" class="ddm1" data-state="right notMobile" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0" data-dropmode="dropDown"><div style="text-align:right;" role="navigation" aria-label="Site navigation" id="DrpDwnMn0itemsContainer" class="ddm1itemsContainer" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0"><a style="display: inherit; color: grey; width: 105px; height: 30px; position: relative; box-sizing: border-box; overflow: visible; visibility: visible;" role="button" tabindex="0" aria-haspopup="false" data-listposition="center" data-direction="ltr" href="@Url.Action("Index", "Home")" target="_self" class="ddm1repeaterButton" data-state="menu  idle link notMobile" id="DrpDwnMn00" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmi1tbi" data-original-gap-between-text-and-btn="10"><div class="ddm1repeaterButton_wrapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmi1tbi.0"><div style="text-align:center;" id="DrpDwnMn00bg" class="ddm1repeaterButtonbg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmi1tbi.0.0"><p style="text-align: center; line-height: 30px;" id="DrpDwnMn00label" class="ddm1repeaterButtonlabel" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmi1tbi.0.0.0">HOME</p></div></div></a><a style="display: inherit; color: grey; width: 105px; height: 30px; position: relative; box-sizing: border-box; overflow: visible; visibility: visible;" role="button" tabindex="0" aria-haspopup="true" data-listposition="center" data-direction="ltr" href="@Url.Action("Index", "Home")" target="_self" class="ddm1repeaterButton" data-state="menu selected idle link notMobile" id="DrpDwnMn01" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmix4g" data-original-gap-between-text-and-btn="12"><div class="ddm1repeaterButton_wrapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmix4g.0"><div style="text-align:center;" id="DrpDwnMn01bg" class="ddm1repeaterButtonbg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmix4g.0.0"><p style="text-align: center; line-height: 30px;" id="DrpDwnMn01label" class="ddm1repeaterButtonlabel" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmix4g.0.0.0">HOME</p></div></div></a><a style="display: inherit; color: grey; width: 105px; height: 30px; position: relative; box-sizing: border-box; overflow: visible; visibility: visible;" role="button" tabindex="0" aria-haspopup="false" data-listposition="center" data-direction="ltr" href="@Url.Action("Create", "Home")" target="_self" class="ddm1repeaterButton" data-state="menu  idle link notMobile" id="DrpDwnMn02" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmityd" data-original-gap-between-text-and-btn="11"><div class="ddm1repeaterButton_wrapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmityd.0"><div style="text-align:center;" id="DrpDwnMn02bg" class="ddm1repeaterButtonbg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmityd.0.0"><p style="text-align: center; line-height: 30px;" id="DrpDwnMn02label" class="ddm1repeaterButtonlabel" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmityd.0.0.0">NEW</p></div></div></a><a style="display: inherit; color: grey; width: 105px; height: 30px; position: relative; box-sizing: border-box; overflow: visible; visibility: visible;" role="button" tabindex="0" aria-haspopup="false" data-listposition="right" data-direction="ltr" href="@Url.Action("Create", "Home")" target="_self" class="ddm1repeaterButton" data-state="menu  idle link notMobile" id="DrpDwnMn03" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmi1nw8" data-original-gap-between-text-and-btn="12"><div class="ddm1repeaterButton_wrapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmi1nw8.0"><div style="text-align:center;" id="DrpDwnMn03bg" class="ddm1repeaterButtonbg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmi1nw8.0.0"><p style="text-align: center; line-height: 30px;" id="DrpDwnMn03label" class="ddm1repeaterButtonlabel" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmi1nw8.0.0.0">ANNOUNCEMENT</p></div></div></a><a style="display: inline-block; box-sizing: border-box; color: grey; visibility: hidden; overflow: hidden; position: absolute;" role="button" tabindex="0" aria-haspopup="true" data-listposition="right" class="ddm1repeaterButton" data-state="menu  idle header notMobile" id="DrpDwnMn0__more__" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$__more__" data-original-gap-between-text-and-btn="11"><div class="ddm1repeaterButton_wrapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$__more__.0"><div style="text-align:center;" id="DrpDwnMn0__more__bg" class="ddm1repeaterButtonbg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$__more__.0.0"><p style="text-align:center;" id="DrpDwnMn0__more__label" class="ddm1repeaterButtonlabel" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$__more__.0.0.0">More</p></div></div></a></div><div id="DrpDwnMn0moreButton" class="ddm1moreButton" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.1"></div><div style="visibility: hidden; left: auto; right: 315px; bottom: auto;" data-drophposition="" data-dropalign="right" role="navigation" id="DrpDwnMn0dropWrapper" class="ddm1dropWrapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.2"><div style="visibility: hidden; left: auto; right: 315px;" id="subMenuContainer" class="ddm1moreContainer" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.2.0"></div></div></nav></div>
-    @*<select>
-        <option value="" disabled="disabled" selected="selected">Please select a name</option>
-        <option value="1">Auto</option>
-        <option value="2">Imobiliare</option>
-        <option value="3">Electronice</option>
-        <option value="4">Arta</option>
-    </select>*@
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("Index", "Home")">HOME</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="@Url.Action("Create", "Home")">Post Announcement</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("AllAnnouncements", "Home")">Announcements</a>
+                    </li>
+                    @*<li>
+                        <a href="#">Contact</a>
+                    </li>*@
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-3">
+
+                <div class="list-group">
+                    <a href="@Url.Action("Auto", "Home")" class="list-group-item"><span>Auto</span></a>
+                    <a href="@Url.Action("Imobiliare", "Home")" class="list-group-item"><span>Imobiliare</span></a>
+                    <a href="@Url.Action("Electronice", "Home")" class="list-group-item"><span>Electronice</span></a>
+                    <a href="@Url.Action("Arta", "Home")" class="list-group-item"><span>Arta</span></a>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+
+                <div class="row carousel-holder">
+
+                    <div class="col-md-12">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2" class="active"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="item">
+                                    <img class="slide-image" src="http://www.deals-n-coupons.in/blog/wp-content/uploads/2016/05/Summer-Season-Best-Shopping-and-Vacation-Offers.png" alt="">
+                                </div>
+                                <div class="item active left">
+                                    <img class="slide-image" src="https://www.agilitypr.com/wp-content/uploads/2016/04/CruiseShip.png" alt="">
+                                </div>
+                                <div class="item next left">
+                                    <img class="slide-image" src="http://earlycareerawards.ie/wp-content/uploads/2017/05/Artboard-28-1.png" alt="">
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="row">
+                    @*/////////////////////////////////////*@
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="https://static.mercedesbenzme.com/media/6409505/2017_cars_picture00489_mobile-320x150.jpg" alt="">
+                            <div class="caption">
+                                <h4>
+                                    <a href="@Url.Action("Auto", "Home")">Auto</a>
+                                </h4>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    @*@////////////////////////////////////////////@*@
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="https://mediavault.point2.com/p2h/listing/93f8/1115/e550/173367301ec5fd641a81/nwm_medium.jpg" alt="">
+                            <div class="caption">
+                                <h4>
+                                    <a href="@Url.Action("Imobiliare", "Home")">Imobiliare</a>
+                                </h4>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">12 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    @*@////////////////////////////////////////////@*@
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="https://d2gg9evh47fn9z.cloudfront.net/thumb_COLOURBOX1498965.jpg" alt="">
+                            <div class="caption">
+                                <h4>
+                                    <a href="@Url.Action("Electronice", "Home")">Electronice</a>
+                                </h4>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">31 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    @*@////////////////////////////////////////////@*@
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/WLA_metmuseum_Rosa_Bonheur_The_Horse_Fair.jpg/320px-WLA_metmuseum_Rosa_Bonheur_The_Horse_Fair.jpg" alt="">
+                            <div class="caption">
+                                <h4>
+                                    <a href="@Url.Action("Arta", "Home")">Arta</a>
+                                </h4>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">18 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <div class="container">
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
 </body>
-
-<h2>HOME</h2>
-
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search  .." title="Type in a name">
-
-
-<table id="myTable">
-    <tr>
-        <th>
-            Category Name
-        </th>
-        <th>
-            Title
-        </th>
-
-        <th>
-            Closed
-        </th>
-
-        <th colspan="4">
-
-        </th>
-
-
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @item.CategoryName
-            </td>
-
-            <td>
-                @item.Title
-            </td>
-            <td>
-                @item.Closed
-            </td>
-            <td colspan="2">
-
-            </td>
-            <td>
-                @Html.ActionLink("Details", "Details", new { id = item.Id, Title = item.Title, Description = item.Description })
-                @*@Html.ActionLink("Close", "Close", new { id = item.Id, email = item.Email }) |
-                @Html.ActionLink("GetReview", "GetReview", new { id = item.Id })*@
-            </td>
-        </tr>
-    }
-</table>
-
-
-
-
-
-<script>
-    function myFunction() {
-        var input, filter, table, tr, td, i;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("myTable");
-        tr = table.getElementsByTagName("tr");
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[0];
-            if (td) {
-                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
-            }
-        }
-    }
-</script>
-
-
-
+</html>

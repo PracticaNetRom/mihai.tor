@@ -1,8 +1,6 @@
 ﻿@model IEnumerable<SummerCamp.Web.Models.Announcement>
 
-@{
-    ViewBag.Title = "Index";
-}
+
 
 <head>
     <style>
@@ -40,16 +38,40 @@
                 #myTable tr.header, #myTable tr:hover {
                     background-color: #f1f1f1;
                 }
-    </style>
-</head>
 
+        body {
+            background-image: url("https://www.clipartsgram.com/image/1284342478-56573976094735chapwood-website-background-1.jpg");
+        }
+
+    </style>
+
+
+</head>
+<style type="text/css">
+    table {
+        page-break-inside: auto;
+    }
+
+    tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
+</style>
 <body>
-    <a href="@Url.Action("Create", "Home")">Add new announcement</a>
+    <div id="ScrnWdthCntnr0-s3ninlineContent" class="sc3inlineContent" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1"><nav id="DrpDwnMn0" data-menuborder-y="0" data-menubtn-border="0" data-ribbon-els="0" data-label-pad="0" data-ribbon-extra="0" data-drophposition="" data-dropalign="right" dir="ltr" style="left: 85px; width: 884px; position: absolute; top: 27px; height: 30px;" class="ddm1" data-state="right notMobile" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0" data-dropmode="dropDown"><div style="text-align:right;" role="navigation" aria-label="Site navigation" id="DrpDwnMn0itemsContainer" class="ddm1itemsContainer" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0"><a style="display: inherit; color: grey; width: 105px; height: 30px; position: relative; box-sizing: border-box; overflow: visible; visibility: visible;" role="button" tabindex="0" aria-haspopup="false" data-listposition="center" data-direction="ltr" href="@Url.Action("Index", "Home")" target="_self" class="ddm1repeaterButton" data-state="menu  idle link notMobile" id="DrpDwnMn00" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmi1tbi" data-original-gap-between-text-and-btn="10"><div class="ddm1repeaterButton_wrapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmi1tbi.0"><div style="text-align:center;" id="DrpDwnMn00bg" class="ddm1repeaterButtonbg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmi1tbi.0.0"><p style="text-align: center; line-height: 30px;" id="DrpDwnMn00label" class="ddm1repeaterButtonlabel" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmi1tbi.0.0.0">HOME</p></div></div></a><a style="display: inherit; color: grey; width: 105px; height: 30px; position: relative; box-sizing: border-box; overflow: visible; visibility: visible;" role="button" tabindex="0" aria-haspopup="true" data-listposition="center" data-direction="ltr" href="@Url.Action("Index", "Home")" target="_self" class="ddm1repeaterButton" data-state="menu selected idle link notMobile" id="DrpDwnMn01" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmix4g" data-original-gap-between-text-and-btn="12"><div class="ddm1repeaterButton_wrapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmix4g.0"><div style="text-align:center;" id="DrpDwnMn01bg" class="ddm1repeaterButtonbg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmix4g.0.0"><p style="text-align: center; line-height: 30px;" id="DrpDwnMn01label" class="ddm1repeaterButtonlabel" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmix4g.0.0.0">HOME</p></div></div></a><a style="display: inherit; color: grey; width: 105px; height: 30px; position: relative; box-sizing: border-box; overflow: visible; visibility: visible;" role="button" tabindex="0" aria-haspopup="false" data-listposition="center" data-direction="ltr" href="@Url.Action("Create", "Home")" target="_self" class="ddm1repeaterButton" data-state="menu  idle link notMobile" id="DrpDwnMn02" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmityd" data-original-gap-between-text-and-btn="11"><div class="ddm1repeaterButton_wrapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmityd.0"><div style="text-align:center;" id="DrpDwnMn02bg" class="ddm1repeaterButtonbg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmityd.0.0"><p style="text-align: center; line-height: 30px;" id="DrpDwnMn02label" class="ddm1repeaterButtonlabel" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmityd.0.0.0">NEW</p></div></div></a><a style="display: inherit; color: grey; width: 105px; height: 30px; position: relative; box-sizing: border-box; overflow: visible; visibility: visible;" role="button" tabindex="0" aria-haspopup="false" data-listposition="right" data-direction="ltr" href="@Url.Action("Create", "Home")" target="_self" class="ddm1repeaterButton" data-state="menu  idle link notMobile" id="DrpDwnMn03" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmi1nw8" data-original-gap-between-text-and-btn="12"><div class="ddm1repeaterButton_wrapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmi1nw8.0"><div style="text-align:center;" id="DrpDwnMn03bg" class="ddm1repeaterButtonbg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmi1nw8.0.0"><p style="text-align: center; line-height: 30px;" id="DrpDwnMn03label" class="ddm1repeaterButtonlabel" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$bmi1nw8.0.0.0">ANNOUNCEMENT</p></div></div></a><a style="display: inline-block; box-sizing: border-box; color: grey; visibility: hidden; overflow: hidden; position: absolute;" role="button" tabindex="0" aria-haspopup="true" data-listposition="right" class="ddm1repeaterButton" data-state="menu  idle header notMobile" id="DrpDwnMn0__more__" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$__more__" data-original-gap-between-text-and-btn="11"><div class="ddm1repeaterButton_wrapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$__more__.0"><div style="text-align:center;" id="DrpDwnMn0__more__bg" class="ddm1repeaterButtonbg" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$__more__.0.0"><p style="text-align:center;" id="DrpDwnMn0__more__label" class="ddm1repeaterButtonlabel" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.0.$__more__.0.0.0">More</p></div></div></a></div><div id="DrpDwnMn0moreButton" class="ddm1moreButton" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.1"></div><div style="visibility: hidden; left: auto; right: 315px; bottom: auto;" data-drophposition="" data-dropalign="right" role="navigation" id="DrpDwnMn0dropWrapper" class="ddm1dropWrapper" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.2"><div style="visibility: hidden; left: auto; right: 315px;" id="subMenuContainer" class="ddm1moreContainer" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$ScrnWdthCntnr0-s3n.1.1.$DrpDwnMn0.2.0"></div></div></nav></div>
+    @*<select>
+        <option value="" disabled="disabled" selected="selected">Please select a name</option>
+        <option value="1">Auto</option>
+        <option value="2">Imobiliare</option>
+        <option value="3">Electronice</option>
+        <option value="4">Arta</option>
+    </select>*@
 </body>
 
-<h2>My Customers</h2>
+<h2>HOME</h2>
 
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search  .." title="Type in a name">
+
 
 <table id="myTable">
     <tr>
@@ -64,8 +86,8 @@
             Closed
         </th>
 
-        <th colspan="2">
-         
+        <th colspan="4">
+
         </th>
 
 
@@ -84,11 +106,13 @@
             <td>
                 @item.Closed
             </td>
+            <td colspan="2">
+
+            </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id, Title = item.Title, Description = item.Description }) |
-                @Html.ActionLink("Close", "Close", new { id = item.Id, email = item.Email })
-                @Html.ActionLink("GetReview", "GetReview", new { id = item.Id})
+                @Html.ActionLink("Details", "Details", new { id = item.Id, Title = item.Title, Description = item.Description })
+                @*@Html.ActionLink("Close", "Close", new { id = item.Id, email = item.Email }) |
+                @Html.ActionLink("GetReview", "GetReview", new { id = item.Id })*@
             </td>
         </tr>
     }
@@ -117,4 +141,6 @@
         }
     }
 </script>
+
+
 

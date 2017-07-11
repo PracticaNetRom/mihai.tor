@@ -161,11 +161,15 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Announcement.cs" />
+    <Compile Include="Models\AnnouncementActivate.cs" />
     <Compile Include="Models\AnnouncementClient.cs" />
     <Compile Include="Models\AnnouncementCreate.cs" />
     <Compile Include="Models\AnnouncementDetails.cs" />
     <Compile Include="Models\AnnouncementClose.cs" />
+    <Compile Include="Models\AnnouncementExtend.cs" />
+    <Compile Include="Models\AnnouncementGetReview.cs" />
     <Compile Include="Models\AnnouncementNewReview.cs" />
+    <Compile Include="Models\Categories.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -220,6 +224,9 @@
     <Content Include="Views\Home\Close.cshtml" />
     <Content Include="Views\Home\Review.cshtml" />
     <Content Include="Views\Home\GetReview.cshtml" />
+    <Content Include="Views\Home\Extend.cshtml" />
+    <Content Include="Views\Home\Activate.cshtml" />
+    <Content Include="Views\Home\Categories.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -57,6 +57,52 @@ namespace SummerCamp.Web.Controllers
         }
 
 
+        //public async Task<ActionResult> Categories()
+        //{
+        //    List<Categories> CategoriesInfo = new List<Categories>();
+        //    string Baseurl = "http://api.summercamp.stage02.netromsoftware.ro";
+        //    using (var client = new HttpClient())
+        //    {
+        //        //Passing service base url  
+        //        client.BaseAddress = new Uri(Baseurl);
+
+        //        client.DefaultRequestHeaders.Clear();
+        //        //Define request data format  
+        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+        //        //Sending request to find web api REST service resource GetAllAnnouncements using HttpClient  
+        //        HttpResponseMessage Res = await client.GetAsync("api/categories");
+
+        //        //Checking the response is successful or not which is sent using HttpClient  
+        //        if (Res.IsSuccessStatusCode)
+        //        {
+        //            //Storing the response details recieved from web api   
+        //            var CategoriesResp = Res.Content.ReadAsStringAsync().Result;
+
+        //            //Deserializing the response recieved from web api and storing into the Announcement list  
+        //            CategoriesInfo = JsonConvert.DeserializeObject<List<Categories>>(CategoriesResp);
+
+        //        }
+        //        //returning the Announcement list to view  
+        //        return View(CategoriesInfo);
+        //    }
+
+        //}
+        
+
+        public ActionResult Categories()
+        {
+            List<SelectListItem> ObjItem = new List<SelectListItem>()
+            {
+          new SelectListItem {Text="Select",Value="0",Selected=true },
+          new SelectListItem {Text="Auto",Value="1" },
+          new SelectListItem {Text="Imobiliare",Value="2"},
+          new SelectListItem {Text="Electronice",Value="3"},
+          new SelectListItem {Text="Arta",Value="4" },
+            };
+            ViewBag.ListItem = ObjItem;
+            return View();
+        }
 
         public async Task<ActionResult> Details(int id)
         {
@@ -84,10 +130,7 @@ namespace SummerCamp.Web.Controllers
 
                 }
 
-                //AnnouncementInfo.Id = id;
-                //AnnouncementInfo.Title = Title;
-                //AnnouncementInfo.Description = Description;
-                //returning the Announcement list to view  
+               
                 return View(AnnouncementInfo);
             }
 
@@ -143,6 +186,44 @@ namespace SummerCamp.Web.Controllers
         }
 
 
+        public ActionResult Extend(int id)
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult Extend(int id, AnnouncementExtend nou)
+        {
+            string url = "http://api.summercamp.stage02.netromsoftware.ro/api/announcements/ExtendAnnouncement?announcementId=" + id;
+            if (ModelState.IsValid)
+            {
+                HttpClient client = new HttpClient();
+                var result = client.PostAsJsonAsync(url, nou).Result;
+            }
+            return RedirectToAction("Index");
+        }
+
+
+        public ActionResult Activate(int id)
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult Activate(int id, AnnouncementActivate nou)
+        {
+            string url = "http://api.summercamp.stage02.netromsoftware.ro/api/announcements/ActivateAnnouncement?announcementId=" + id;
+            if (ModelState.IsValid)
+            {
+                HttpClient client = new HttpClient();
+                var result = client.PostAsJsonAsync(url, nou).Result;
+            }
+            return RedirectToAction("Index");
+        }
+
+
 
 
         public ActionResult Review()
@@ -165,7 +246,7 @@ namespace SummerCamp.Web.Controllers
                     ViewBag.Result = "Succesfully saved!";
                     ModelState.Clear();
 
-                    return RedirectToAction("GetReview");
+                    return View(new AnnouncementNewReview());
                 }
                 else
                 {
@@ -180,7 +261,7 @@ namespace SummerCamp.Web.Controllers
 
         public async Task<ActionResult> GetReview(int id)
         {
-            List<AnnouncementNewReview> AnnouncementInfo = new List<AnnouncementNewReview>();
+            List<AnnouncementGetReview> AnnouncementInfo = new List<AnnouncementGetReview>();
             string Baseurl = "http://api.summercamp.stage02.netromsoftware.ro/";
             using (var client = new HttpClient())
             {
@@ -200,7 +281,7 @@ namespace SummerCamp.Web.Controllers
                     var AnnouncementResp = Res.Content.ReadAsStringAsync().Result;
 
                     //Deserializing the response recieved from web api and storing into the Announcement list  
-                    AnnouncementInfo = JsonConvert.DeserializeObject<List<AnnouncementNewReview>>(AnnouncementResp);
+                    AnnouncementInfo = JsonConvert.DeserializeObject<List<AnnouncementGetReview>>(AnnouncementResp);
 
                 }
 
@@ -213,33 +294,7 @@ namespace SummerCamp.Web.Controllers
 
         }
 
-        //public async Task<ActionResult> Edit(int id)
-        //{
-        //    HttpResponseMessage responseMessage = await client.GetAsync(url + "/" + id);
-        //    if (responseMessage.IsSuccessStatusCode)
-        //    {
-        //        var responseData = responseMessage.Content.ReadAsStringAsync().Result;
-
-        //        var Employee = JsonConvert.DeserializeObject<EmployeeInfo>(responseData);
-
-        //        return View(Employee);
-        //    }
-        //    return View("Error");
-        //}
-
-        ////The PUT Method
-        //[HttpPost]
-        //public async Task<ActionResult> Edit(int id, EmployeeInfo Emp)
-        //{
-
-        //    HttpResponseMessage responseMessage = await client.PutAsJsonAsync(url + "/" + id, Emp);
-        //    if (responseMessage.IsSuccessStatusCode)
-        //    {
-        //        return RedirectToAction("Index");
-        //    }
-        //    return RedirectToAction("Error");
-        //}
-
+       
 
 
 

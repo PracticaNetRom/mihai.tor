@@ -5,7 +5,7 @@ using System.Web;
 
 namespace SummerCamp.Web.Models
 {
-    public class AnnouncementNewReview
+    public class AnnouncementGetReview
     {
         public int Id { get; set; }
 
@@ -14,6 +14,5 @@ namespace SummerCamp.Web.Models
         public string Comment { get; set; }
 
         public int Rating { get; set; }
-        public int AnnouncementId { get; set; }
     }
 }

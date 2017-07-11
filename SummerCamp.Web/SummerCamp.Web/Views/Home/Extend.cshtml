@@ -1,7 +1,7 @@
-﻿@model IEnumerable<SummerCamp.Web.Models.AnnouncementGetReview>
+﻿@model SummerCamp.Web.Models.AnnouncementExtend
 
 @{
-    ViewBag.Title = "Reviews";
+    ViewBag.Title = "Extend";
 }
 
 
@@ -10,7 +10,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Reviews</title>
+    <title>Extend</title>
 
     <style>
         * {
@@ -55,49 +55,33 @@
 
 </head>
 <body>
-    <h4>Reviews</h4>
+    <h4>Extend Announcement</h4>
     <hr />
 </body>
 
-
-
-<table class="table">
-    <tr>
-        <th colspan="4">
-            @Html.DisplayNameFor(model => model.Username)
-        </th>
-        <th colspan="4">
-            @Html.DisplayNameFor(model => model.Comment)
-        </th>
-        <th colspan="4">
-            @Html.DisplayNameFor(model => model.Rating)
-        </th>
-        
-
-    </tr>
-
-    @foreach (var item in Model)
+<div style="max-width:600px">
+    @using (Html.BeginForm("Extend", "Home", FormMethod.Post, new { role = "form" }))
     {
-        <tr>
-            <td colspan="4">
-                @Html.DisplayFor(modelItem => item.Username)
-            </td>
-            <td colspan="4">
-                @Html.DisplayFor(modelItem => item.Comment)
-            </td>
-            <td colspan="4">
-                @Html.DisplayFor(modelItem => item.Rating)
-            </td>
-            
-        </tr>
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @if (ViewBag.Result != null)
+            {
+                <div style="color:red">@ViewBag.Result</div>
+            }
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(a => a.Email)
+            @Html.TextBoxFor(a => a.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(a => a.Email, "", new { @class = "text-danger" })
+        </div>
+
+
+        <input type="submit" value="Extend" class="btn-default" />
     }
-
-
-
-</table>
-<p>
-    @Html.ActionLink("Comment/Review", "Review") |
-    @Html.ActionLink("HOME", "Index")
-</p>
+</div>
+<p>@Html.ActionLink("HOME", "Index")</p>
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
 </html>
-
